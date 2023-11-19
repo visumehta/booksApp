@@ -1,0 +1,14 @@
+1. json-server
+=> npm i json-server
+
+2. angular material
+=> ng add @angular/material
+
+3. ngrx store
+=> ng add @ngrx/store
+
+4. ngrx effects
+=> ng add @ngrx/effects
+
+5. ngrx entity
+=> ng add @ngrx/entity
