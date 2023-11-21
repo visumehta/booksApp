@@ -3,7 +3,17 @@
     {
       "id": 1,
       "title": "json-server",
-      "author": "typicode"
+      "author": "typicode111"
+    },
+    {
+      "title": "hello world",
+      "author": "xyz",
+      "id": 2
+    },
+    {
+      "title": "123",
+      "author": "bbb",
+      "id": 3
     }
   ]
 }

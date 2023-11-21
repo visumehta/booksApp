@@ -1,6 +1,6 @@
 <div style="overflow-x:auto;">
   <div class="add-button">
-  <button class="mat-button" color="primary">Add</button>
+  <button class="mat-button" color="primary" (click)="openModal()">Add</button>
   </div>
     <table>
       <thead>
@@ -23,11 +23,11 @@
                 <mat-icon>more_vert</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
-                <button mat-menu-item>
+                <button mat-menu-item (click)="openModal(item)">
                   <mat-icon>edit</mat-icon>
                   <span>Edit</span>
                 </button>
-                <button mat-menu-item>
+                <button mat-menu-item (click)="deleteBook(item.id)">
                   <mat-icon>delete</mat-icon>
                   <span>Delete</span>
                 </button>

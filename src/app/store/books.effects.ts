@@ -20,4 +20,40 @@ export class BookEffects {
         )
     )
   )
+
+  addBook$ = createEffect(() => 
+    this.action$.pipe(
+      ofType(booksActions.addBook),
+      mergeMap((action) => 
+        this._httpService.addBookData(action.book).pipe(
+          map((book) => booksActions.addBookSuccess({book})),
+          catchError((error) => of(booksActions.addBookFailure({error})))
+        )
+      )
+    )
+  )
+
+  updateBook$ = createEffect(() => 
+    this.action$.pipe(
+      ofType(booksActions.updateBook),
+      mergeMap((action) => 
+        this._httpService.updateBookData(action.id, action.changes).pipe(
+          map((changes) => booksActions.updateBookSuccess({id : action.id,changes})),
+          catchError((error) => of(booksActions.updateBookFailure({error})))
+        )
+      )
+    )
+  )
+
+  deleteBook$ = createEffect(() => 
+    this.action$.pipe(
+      ofType(booksActions.deleteBook),
+      mergeMap((action) => 
+        this._httpService.deleteBook(action.id).pipe(
+          map(() => booksActions.deleteBookSuccess({id : action.id})),
+          catchError((error) => of(booksActions.deleteBookFailure({error})))
+        )   
+      )
+    )
+  )
 }
